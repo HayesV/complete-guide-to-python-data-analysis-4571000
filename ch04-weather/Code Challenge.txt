@@ -1,0 +1,17 @@
+Temperature Anomaly
+- difference of the average temperature in a year (average of the average min and average max) and the average tempatrue, averaged over the decade inclusive of 1945-1955
+
+Compute the anomaly for all years between 1880 and 2023, rounded to 2 decimals
+
+Paramters
+- allyears : 1 144x365 NumPy record array with TMIN and TMAX fields containing min and max temps from 1880 to 2023 and days of year 1:365
+- reference years correspond to 65:75
+
+Solution
+
+import NumPy
+old Average = 0.5 * np.mean(allyears[65:76]['TMIN]) + np.mean(allyears[65:76]['TMAX'])
+
+anomaly = 0.5 * (np.mean(allyears['TMIN']) + np.mean(allyears['TMAX'])) - old average
+
+return np.round(anomaly,2)
